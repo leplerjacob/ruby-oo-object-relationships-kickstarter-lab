@@ -19,14 +19,32 @@ class Project
     end
 
     def backers
-        # binding.pry
-        projectbackers = []
-        ProjectBacker.all.each do |project|
+
+
+        ProjectBacker.all.each_with_object([]) do |project, array|
             if project.project == self
-                projectbackers << project.backer
+                array << project.backer
             end
         end
-        projectbackers
+
+        #other approaches 
+
+        #this one works
+
+        # projectbackers = []
+        # ProjectBacker.all.each do |project|
+        #     if project.project == self
+        #         projectbackers << project.backer
+        #     end
+        # end
+        # projectbackers
+
+        #does not work
+        # PorjectBacker.all.chunk{|project| project.project == self}
+
+        #does not work
+        # backed_projects = ProjectBacker.all.select {|project| project.project==self}
+        # backed_projects.backer
     end
 
 end

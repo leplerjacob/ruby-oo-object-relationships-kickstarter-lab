@@ -20,6 +20,7 @@ class Backer
                 backedprojects << project.project
             end
         end
+        # binding.pry
         backedprojects
     end
 

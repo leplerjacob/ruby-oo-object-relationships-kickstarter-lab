@@ -20,7 +20,6 @@ class Project
 
     def backers
 
-
         ProjectBacker.all.each_with_object([]) do |project, array|
             if project.project == self
                 array << project.backer
@@ -44,7 +43,7 @@ class Project
 
         #does not work
         # backed_projects = ProjectBacker.all.select {|project| project.project==self}
-        # backed_projects.backer
+        # backed_projects
     end
 
 end

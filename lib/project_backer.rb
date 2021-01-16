@@ -9,7 +9,7 @@ class ProjectBacker
         @project = project
         @backer = backer
         @@all << self
-        
+        binding.pry
     end
 
     def self.save 
